@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>index</title>
+    <!-- Bootstrap core CSS-->
+    <link href="../bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Custom styles for this template
+    <link href="" rel="stylesheet">-->
+</head>
+<body>
+<div class="container">
+    <h2 class="form-signin-heading"> display </h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th> ID </th>
+            <th> ADMINID </th>
+            <th> NAME </th>
+            <th> PASS </th>
+            <th> PHONE </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${admin.id}"></td>
+            <td th:text="${admin.adminid}"></td>
+            <td th:text="${admin.name}"></td>
+            <td th:text="${admin.pass}"></td>
+            <td th:text="${admin.phone}"></td>
+        </tr>
+        <!--
+        <tr th:each="adm:${admins}">
+            <td th:text="${adm.id}"> </td>
+            <td th:text="${adm.adminid}"> </td>
+            <td th:text="${adm.name}"> </td>
+            <td th:text="${adm.pass}"> </td>
+            <td th:text="${adm.phone}"> </td>
+        </tr>
+        -->
+        </tbody>
+    </table>
+</div> <!--container-->
+
+<!-- Bootstrap core JavaScript>
+     =============================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src = "../bootstrap-3.3.7/jquery-3.2.1.min.js"> </script>
+<script src = "../bootstrap-3.3.7/js/bootstrap.min.js"> </script>
+</body>
+</html>

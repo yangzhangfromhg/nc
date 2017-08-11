@@ -15,7 +15,26 @@
         select * from admininfo
     </select>
 
-    <select id = "getAdminById" resultMap="adminResultMap">
+    <select id = "getAdminById" parameterType="java.lang.Integer" resultMap="adminResultMap">
         select * from admininfo where id=#{id}
     </select>
+
+    <insert id="addAdmin" parameterType="com.hg.entity.AdminInfo" useGeneratedKeys="true" keyProperty="ID">
+        insert into admininfo(ID, ADMINID, NAME, PASS, PHONE)
+              VALUES(#{id}, #{adminid}, #{name}, #{pass}, #{phone})
+    </insert>
+
+
+    <update id="updateAdmin" parameterType="com.hg.entity.AdminInfo">
+        UPDATE admininfo
+           SET admininfo.ADMINID = #{adminid},
+               admininfo.NAME = #{name},
+               admininfo.PASS = #{pass},
+               admininfo.PHONE = #{phone}
+           WHERE admininfo.id = #{id}
+    </update>
+
+    <delete id="deleteAdmin" parameterType="java.lang.Integer">
+        DELETE FROM admininfo WHERE id = #{id}
+    </delete>
 </mapper>

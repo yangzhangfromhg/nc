@@ -12,6 +12,10 @@ import java.util.List;
 
 public interface AdminMapper {
 
-    public List<AdminInfo> getAllAdmin();
-    public AdminInfo getAdminById(Integer id);
+    List<AdminInfo> getAllAdmin();
+    AdminInfo getAdminById(Integer id);
+
+    int addAdmin(AdminInfo adminInfo);
+    int updateAdmin(AdminInfo adminInfo);
+    int deleteAdminById(Integer id);
 }
